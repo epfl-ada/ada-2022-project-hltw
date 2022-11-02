@@ -1,4 +1,5 @@
-P2: Project proposal and initial analyses
+# P2: Project proposal and initial analyses
+
 When you are done with Homework H1, you will continue to work on the next project milestone. In Milestone P2, together with your team members, you will agree on, and refine, your project proposal. Your first task is to select a project. Even though we provide the datasets for you to use, at this juncture, it is your responsibility to check that what you propose is feasible given the data (including any additional data you might bring in yourself), and to perform initial analyses.
 
 The goal of this milestone is to intimately acquaint yourself with the data, preprocess it, and complete all the necessary descriptive statistics tasks. We expect you to have a pipeline in place, fully documented in a notebook, and show us that you have clear project goals.
