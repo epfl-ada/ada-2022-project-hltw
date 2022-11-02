@@ -1,6 +1,3 @@
-# ada-2022-project-hltw
-ada-2022-project-hltw created by GitHub Classroom
-
 P2: Project proposal and initial analyses
 When you are done with Homework H1, you will continue to work on the next project milestone. In Milestone P2, together with your team members, you will agree on, and refine, your project proposal. Your first task is to select a project. Even though we provide the datasets for you to use, at this juncture, it is your responsibility to check that what you propose is feasible given the data (including any additional data you might bring in yourself), and to perform initial analyses.
 
