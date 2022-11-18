@@ -1,4 +1,4 @@
-# Is "pyramid" related to "beans"? What are the craziest connections people make in the Wikispeedia game?
+# Is "pyramid" related to "bean"? What are the craziest connections people make in the Wikispeedia game?
 
 # Abstract
 
