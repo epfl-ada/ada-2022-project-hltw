@@ -41,13 +41,6 @@ Our initial exploration and some prototyping of the ideas are in the [notebook](
 
 We would use Wikipedia2Vec to aid us with comparing the common knowledge used within the game to the real world based on the knowledge from the latest Wikipedia pages. For example, maybe the commonly used knowledge, like `(Brain, Mind, Linguistics, Language, Communication, Telephone)` is not how the real world usually infers from the brain to the telephone. 
 
-## Finding the spurious graph correlations
-
-Based on the commonly used edges of different lengths, we accumulate the count of starting and ending pages from both ends of the path, and we analyze the potential spurious correlations. 
-
-![](https://i.imgur.com/uhXLoUz.png)
-![](https://i.imgur.com/d0o3MCZ.png)
-
 ## Extract information on how people think by comparing distinct paths taken from page A to page B
 
 For a given popular starting and ending pair of pages, we analyze how many distinct paths are there. We would compute the distances (using the methods below) between all the distinct paths, or, cluster those into groups by the number of common nodes, etc., to see how differently people think of linking 2 different subjects.
@@ -71,6 +64,13 @@ The shortest path matrix contains the shortest path between every pair of pages 
 When playing the Wikispeedia game, players may have a model or strategy in their minds for navigation (like the A* algorithm). When players choose the next page at each step, they must have thought that the chosen page is closer to the destination than other options. Based on these comparison data, we can try to recover the graph model in players' minds, and compare them with the semantic distances or shortest path distances. We expect this will reveal how people think when playing the game.
 
 Other possible distance metrics include real-world Wikipedia distances (based on full Wikipedia other than the subset used by Wikispeedia), and shortest-path with missing links (in some pages, many words are just plain text without a link, add links for them to obtain a new graph)
+
+## Finding the spurious graph correlations
+
+Based on the commonly used edges of different lengths, we accumulate the count of starting and ending pages from both ends of the path, and we analyze the potential spurious correlations. 
+
+![](https://i.imgur.com/uhXLoUz.png)
+![](https://i.imgur.com/d0o3MCZ.png)
 
 # Proposed timeline
 
