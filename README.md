@@ -1,4 +1,4 @@
-# Is "math" related to "science"? What are the craziest connections people make in the Wikispeedia game?
+# Is "pyramid" related to "beans"? What are the craziest connections people make in the Wikispeedia game?
 
 # Abstract
 
@@ -6,16 +6,15 @@ Wikispeedia is an online game where players have to reach the target wiki articl
 
 We want to find the paths that for everyday people may seem very unreasonable, but essentially produce the desired result. There is no exact way of telling what is reasonable and not, but we would use the idea like common paths taken, to see how people navigates the pages. The story would show how people travel through Wikispeedia games similarly as some people travel through roads and highways.
 
-
 # Research Questions
 
 ## 1. What are the common inferring process and how they are used to connect ideas together?
 
-Instead of using the idea of the hub, we use the idea of common sub-paths of length 2~4, which links logical ideas together. We observed that we have many recurring common paths in the Wikispeedia games, which we call highways - as they are the most commonly used paths between many articles and are largely reused in games. 
+Instead of using the idea of the hub, we use the idea of common sub-paths of length greater than 1, which represents how logical ideas are linked together. We observed that we have many recurring common paths in the Wikispeedia games, which we call highways - as they are the most commonly used paths between many articles and are largely reused in games. We would like to compare it against the real-world wiki data. 
 
-## 2. How differently people think?
+## 2. How differently do people think?
 
-For a given pair or starting and ending pages, we look at all successful user run paths that took a detour from the path where majority took and try to identify how semantically distant people are from each other. 
+For a given pair or starting and ending pages, we look at all successful user run paths that took a detour from the path where majority took and try to identify how semantically distant people's thought are from each other. 
 
 ## 3. What are the spurious correlations between graphs of similar paths?
 
@@ -25,36 +24,77 @@ Correlation does not imply causation, however, it sometimes feels fun to see the
 
 We currently don't have usage cases of additional dataset, but we would augment the dataset by taking all the finished paths and break it down in to sub-paths, according to our needs.
 
-An additional tool instead of dataset that we might be using is [Wikipedia2Vec](https://wikipedia2vec.github.io/wikipedia2vec/).
+An additional tool instead of dataset that we might be using is [Wikipedia2Vec](https://wikipedia2vec.github.io/wikipedia2vec/). "Wikipedia2Vec is a tool used for obtaining embeddings (or vector representations) of words and entities (i.e., concepts that have corresponding pages in Wikipedia) from Wikipedia."
 
 # Methods
 
-- Step 1: Clean data. There are some paths containing the back click sign, "<". We reduce the path by only keeping the paths without backtracking. We also perform unquoting on words, also we split the paths into lists for easier data processing.
-- Step 2: Use the cleaned paths to establish the network. Each article name will be the node, and the edges will be the click path. To find the correlation better, we plan to set the weight as the semantic similarity score between the nodes' article plaintext.
-- Step 3: Method 1 to find the correlation, Community Detection. Detect communities based on the chosen weight, and find what each community represents.
-- Step 4: Method 2 to find the correlation. Also based on the chosen weight, calculate the Pearson Correlations on complex networks. [Pearson Correlations on Complex Networks](https://www.michelecoscia.com/wp-content/uploads/2021/10/nvd_corr.pdf)
-- Step 5: Method to find the spurious graph correlations.
-The idea is mainly to find spurious graph correlations. https://www.tylervigen.com/spurious-correlations
-We take the ingoing and outgoing edge paths for novels like Harry Potter (HP) and find other Wikipedia articles closely related to ingoing and outgoing edges. For example:
-Tabasco ->(50/300 paths)-> Harry Potter ->(10/100 paths) ->Chocolate 		
-Tabasco ->(100/600 paths) Pizza ->(20/200 paths) 
-If we normalize the ratios of an incoming number of edges Tabasco->X, we have ⅙ for incoming and 1/10 for outgoing. Does that maybe mean Harry Potter = Pizza? We could try to run this through for all the data and handpick the most fun ones
-Or in another way, we can see what edges are used the most, see the top starting / ending notes that pass through them, and see if there are any interesting pairings coming out of them.
-- Step 6: Difference between distance metrics
-With the Wikispeedia dataset and other NLP models, we have several ways to measure the 'distance' between words.
-We've proposed at least 3 ways for measuring the distance, i
-See how semantic distances of word models(BERT, Word2Vec) relate to shortest path distances in the Wikispeedia game.
-The shortest path distance would indicate the “semantic wiki distance” between Wikipedia articles. 
-Later we could compare the generated distances of language models and “our Wikipedia distances” to see if Wikipedia connects very semantically distant words.
-We are trying to find semantically disconnected words that are very closely connected by(user navigation blue links) Wikipedia articles.
-We have a lot of data for this since we can reuse all the subpaths of the runs.
-We can explore with shortest paths and with user paths
+Our initial exploration and some prototyping of the ideas is in the [notebook](http://127.0.0.1:8888/lab/tree/work/P2.ipynb).
+
+## Data pre-processing 
+
+- There are some paths containing the back click sign, "<". We reduce the path by only keeping the paths without backtracking. 
+- Perform unquoting on words and spliting the paths into lists for easier data processing.
+- Compute commonly used sub-paths of length from 1 to 6
+- Compute commonly appearing starting and ending pair of pages from sub-paths of lenght greater than 1
+
+## Compare common knowledge - how does the gamer's world differs from the real-world people
+
+We would use Wikipedia2Vec to aid us with comparing the common knowledge used within the game to the real-world based on the knowledge from the latest wikipedia pages. For example, maybe the commonly used knowledge, like `(Brain, Mind, Linguistics, Language, Communication, Telephone)` is not how the real-world usually infer about brain to telephone. 
+
+## Finding the [spurious graph correlations](https://www.tylervigen.com/spurious-correlations)
+
+Based on the commonly used edges of different lengths, we accumulate the count of starting and ending pages from both ends of the path, and we analyze the potential spurious correlations. 
+
+![](https://i.imgur.com/uhXLoUz.png)
+![](https://i.imgur.com/d0o3MCZ.png)
+
+## Extract information on how people think by comparing distinct paths taken from page A to page B
+
+For a given popular starting and ending pair of pages, we analyze how many distint paths are there. We would compute the distances (using the methods below) between all the distinct paths, or, cluster those into groups by number of common nodes, etc., to see how differently people think of linking 2 different subjects.
+
+### Distance
+
+With the Wikispeedia dataset and other NLP models, we have several ways to measure the 'distance' between pages.
+
+We've proposed at least 3 ways for measuring the distance, including semantic distances, the shortest path distances, and the players' distances.
+
+#### Semantic distances
+
+With some commonly used NLP models like BERT and Word2Vec, we can calculate the distance between words and concepts. This can serve as a baseline for further comparison.
+
+#### Shortest path distances
+
+The shortest path matrix contains the shortest path between every pairs of pages in the Wikispeedia game. We expect that it may have some inconsistencies with the semantic distances. For example, semantically distant words may be connected in a few steps in Wikispeedia, or vice versa. We will find out the inconsistencies and then try to understand the reasons behind them.
+
+#### Players' distances
+
+When playing the Wikispeedia game, players may have a model or strategy in their minds for navigation (like the A* algorithm). When players choose the next page at each step, they must have thought that the chosen page is closer to the destination than other options. Based on these comparision data, we can try to recover the graph model in players' mind, and compare them with the semantic distances or shortest path distances. We expect this will reveal how people think when playing the game.
+
 
 # Proposed timeline
 
+Research question 1, 25/11/2022
+Research question 2, 2/12/2022
+Research question 3, 9/12/2022
+Design and develop website, 16/12/2022
+Final deliverable, 23/12/2022
 
 
 # Team Organization
+
+Explore data: Teammate 3
+Arrange proposal: Teammate 1,2,3,4
+Research question 1: Teammate 1,2
+Research question 2: Teammate 2,3
+Research question 3: Teammate 3,4
+Arrange data story: Teammate 4
+Website development: Teammate 1, 2, 3
+
+Teammate 1: Liudvikas 
+Teammate 2: Chenyu
+Teammate 3: Henry
+Teammate 4: Lili
+
 
 # Questions for TAs (optional): Add here any questions you have for us related to the proposed project.
 
