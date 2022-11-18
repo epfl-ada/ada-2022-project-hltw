@@ -4,11 +4,11 @@
 
 Wikispeedia is an online game where players have to reach the target wiki article from an unrelated start wiki article by clicking links in the articles. In all finished paths, some paths are reached logically by following Wikipedia articles that are semantically similar or steer toward familiar topics. However, the Wikispeedia game wouldn’t be a game if there weren’t any unique and genuine ways of reaching the desired end goal. These ingenious ways in which very few people connect are what draw us to explore this data set. 
 
-We want to find the paths that for everyday people may seem very unreasonable, but essentially produce the desired result. There is no exact way of telling what is reasonable and not, but we would use ideas like common paths taken, to see how people navigate the pages. The story would show how people travel through Wikispeedia games similarly as some people travel through roads and highways.
+We want to find the paths that for normal people may seem very unreasonable, but essentially produce the desired result. There is no exact way of telling what is reasonable and not, but we would use ideas like common paths taken, to see how people navigate the pages. The story would show how people travel through Wikispeedia games similarly as some people travel through roads and highways.
 
 # Research Questions
 
-## 1. What are the common inferring process and how they are used to connect ideas together?
+## 1. What are the common knowledge inferring process and how they are used to connect ideas together?
 
 Instead of using the idea of the hub, we use the idea of common sub-paths of length greater than 1, which represents how logical ideas are linked together. We observed that we have many recurring common paths in the Wikispeedia games, which we call highways - as they are the most commonly used paths between many articles and are largely reused in games. We would like to compare it against real-world wiki data. 
 
@@ -22,9 +22,9 @@ Correlation does not imply causation, however, it sometimes feels fun to see the
 
 # Proposed Additional Datasets
 
-We currently don't have usage cases of the additional datasets, but we would augment the dataset by taking all the finished paths and breaking it down into sub-paths, according to our needs.
-
-An additional tool instead of the dataset that we might be using is [Wikipedia2Vec](https://wikipedia2vec.github.io/wikipedia2vec/). 
+- Augmented all finished paths and breaking it down into sub-paths
+- [Wikipedia page dump](https://dumps.wikimedia.org/)
+- An additional tool instead of the dataset that we might be using is [Wikipedia2Vec](https://wikipedia2vec.github.io/wikipedia2vec/). 
 
 # Methods
 
@@ -34,14 +34,14 @@ Our initial exploration and some prototyping of the ideas are in the [notebook](
 
 - There are some paths containing the back click sign, "<". We reduce the path by only keeping the paths without backtracking. 
 - Perform unquoting on words and splitting the paths into lists for easier data processing.
-- Compute commonly used sub-paths of length from 1 to 6
+- Compute commonly used sub-paths of length from 2 to 6
 - Compute commonly appearing starting and ending pairs of pages from sub-paths of length greater than 1
 
 ## Compare common knowledge - how does the gamer's world differ from the real-world people
 
 We would use Wikipedia2Vec to aid us with comparing the common knowledge used within the game to the real world based on the knowledge from the latest Wikipedia pages. For example, maybe the commonly used knowledge, like `(Brain, Mind, Linguistics, Language, Communication, Telephone)` is not how the real world usually infers from the brain to the telephone. 
 
-## Finding the [spurious graph correlations](https://www.tylervigen.com/spurious-correlations)
+## Finding the spurious graph correlations
 
 Based on the commonly used edges of different lengths, we accumulate the count of starting and ending pages from both ends of the path, and we analyze the potential spurious correlations. 
 
@@ -54,7 +54,7 @@ For a given popular starting and ending pair of pages, we analyze how many disti
 
 ### Distance
 
-With the Wikispeedia dataset and other NLP models, we have several ways to measure the 'distance' between pages.
+With the Wikispeedia dataset and other NLP models, we have several ways to measure the *distance* between pages.
 
 We've proposed at least 3 ways for measuring the distance, including semantic distances, the shortest path distances, and the players' distances.
 
@@ -102,5 +102,3 @@ Other possible distance metrics include real-world Wikipedia distances (based on
 # Questions for TAs (optional): Add here any questions you have for us related to the proposed project.
 
 N/A
-
-
