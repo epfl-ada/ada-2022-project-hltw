@@ -24,7 +24,7 @@ Correlation does not imply causation, however, it sometimes feels fun to see the
 
 We currently don't have usage cases of additional dataset, but we would augment the dataset by taking all the finished paths and break it down in to sub-paths, according to our needs.
 
-An additional tool instead of dataset that we might be using is [Wikipedia2Vec](https://wikipedia2vec.github.io/wikipedia2vec/). "Wikipedia2Vec is a tool used for obtaining embeddings (or vector representations) of words and entities (i.e., concepts that have corresponding pages in Wikipedia) from Wikipedia."
+An additional tool instead of dataset that we might be using is [Wikipedia2Vec](https://wikipedia2vec.github.io/wikipedia2vec/). 
 
 # Methods
 
@@ -70,31 +70,34 @@ The shortest path matrix contains the shortest path between every pairs of pages
 
 When playing the Wikispeedia game, players may have a model or strategy in their minds for navigation (like the A* algorithm). When players choose the next page at each step, they must have thought that the chosen page is closer to the destination than other options. Based on these comparision data, we can try to recover the graph model in players' mind, and compare them with the semantic distances or shortest path distances. We expect this will reveal how people think when playing the game.
 
+Other possible distance metrices includes real-world Wikipedia distances (based on full Wikipedia other than the subset used by Wikispeedia), and shortest-path with missing links (in some pages, many words are just plain text without a link, we add links for them)
 
 # Proposed timeline
 
-Research question 1, 25/11/2022
-Research question 2, 2/12/2022
-Research question 3, 9/12/2022
-Design and develop website, 16/12/2022
-Final deliverable, 23/12/2022
-
+* 25/11/2022: Research question 1
+* 2/12/2022: Research question 2
+* 9/12/2022: Research question 3
+* 16/12/2022: Design and develop website
+* 23/12/2022: Final deliverable
 
 # Team Organization
 
-Explore data: Teammate 3
-Arrange proposal: Teammate 1,2,3,4
-Research question 1: Teammate 1,2
-Research question 2: Teammate 2,3
-Research question 3: Teammate 3,4
-Arrange data story: Teammate 4
-Website development: Teammate 1, 2, 3
+## Members
 
-Teammate 1: Liudvikas 
-Teammate 2: Chenyu
-Teammate 3: Henry
-Teammate 4: Lili
+* Teammate 1: Liudvikas 
+* Teammate 2: Chenyu
+* Teammate 3: Henry
+* Teammate 4: Lili
 
+## Task split
+
+* Explore data: Teammate 3
+* Arrange proposal: Teammate 1,2,3,4
+* Research question 1: Teammate 1,2
+* Research question 2: Teammate 2,3
+* Research question 3: Teammate 3,4
+* Arrange data story: Teammate 4
+* Website development: Teammate 1, 2, 3
 
 # Questions for TAs (optional): Add here any questions you have for us related to the proposed project.
 
