@@ -1,0 +1,9 @@
+theme: jekyll-theme-minimal
+title: HLTW
+description: HLTW Project
+show_downloads: True
+navigation:
+  - title: Home
+    url: /
+  - title: Example
+    url: example
