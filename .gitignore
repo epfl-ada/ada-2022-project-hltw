@@ -2,3 +2,4 @@ data/plaintext_articles/
 data/wpcd/
 .DS_Store
 *.gz
+test.csv
