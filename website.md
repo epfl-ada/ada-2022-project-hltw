@@ -25,6 +25,8 @@ jekyll new docs
 cd docs
 ```
 
+And follow the guide [here](https://github.com/lorepirri/cayman-blog)
+
 ## Development
 
 ```bash
