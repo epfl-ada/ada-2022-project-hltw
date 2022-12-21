@@ -21,8 +21,8 @@ gem install jekyll
 
 ```bash
 gem install jekyll bundler
-jekyll new blog
-cd blog
+jekyll new docs
+cd docs
 ```
 
 ## Development
