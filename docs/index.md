@@ -64,7 +64,7 @@ We tried 3 different approaches to find the international and local highways. We
 
 ### Average
 For computing the average vector we take all the vectors we have in entry and end sets and compute the mean vectors which are later used to compute cosine similarity.
-[Insert table and so on]
+{% include averaged.html %}
 
 With threshold 0.2 we see that the table shows really disconnected sets of articles at the start and the end. However, we face one problem, that the article sets are mostly composed of very few articles. The reason for this is most likely that the more articles you have, the more similar they become to each other when they are averaged out. Therefore, we tried the two other following approaches.
 ### Weighted Average
@@ -78,7 +78,7 @@ With threshold 0.2 we see that the table shows really disconnected sets of artic
 
 Another way of viewing the similarity between entry and exit sets was to create a matrix for each of them and compute the euclidean distance between them. We concatenate vectors accordingly into start and end matrices and then compute the Euclidean distance between the two. Finally, the distance is normalized for viewing the results.
 
-[Insert final table]
+{% include euclidean.html %}
 
 ### Similarities between start and end points / Conclusion?
 [insert plot In[60]]
