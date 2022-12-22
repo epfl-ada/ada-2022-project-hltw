@@ -28,4 +28,4 @@ layout: home
 
 # HTML
 
-{% include test.html %}
+{% include slider.html %}
