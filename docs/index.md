@@ -28,4 +28,4 @@ layout: home
 
 # HTML
 
-{% include slider.html %}
+{% include weighed.html %}
