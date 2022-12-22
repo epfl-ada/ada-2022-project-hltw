@@ -3,3 +3,5 @@ data/wpcd/
 .DS_Store
 *.gz
 test.csv
+iframe_figures
+.ipynb_checkpoints
