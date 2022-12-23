@@ -49,7 +49,7 @@ We use the common subpath with length 2-6 and 7-10 as the representative.
 In the graph above we compare value counts of paths of length 2-6 and 7-10. We can see that 2-6 almost constantly holds a higher value count ratio than 7-10. 2-6 Has almost 80 times more data compared to 7-10.
 An overview of the number of entries for the common subpaths with each length:
 
-**insert plot In 44**
+{% include value_counts.html %}
 
 We can see rapid decrease from 4-5 path reusage. Technically it should make sense to to subpaths of length 2-5 but we include 6 just to draw more interesting results, as subpaths of 6 may connect more peculiar areas.
 
