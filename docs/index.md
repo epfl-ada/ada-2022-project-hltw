@@ -71,7 +71,7 @@ As mentioned previously, classifying highways into local and international is on
 
 ## Similarities
 
-We tried 3 different approaches to find the international and local highways. We calculate the mean, and weighted mean of entry and exit point article sets and then compute cosine similarity. Or as our third approach, we produce a matrix from the start and end point article vectors and compute the euclidean distance between the generated matrices.
+We tried 3 different approaches to find the international and local highways. We calculate the mean, and weighted mean of entry and exit point article sets and then compute cosine similarity. Or as our third approach, we produce a matrix from the start and end point article vectors and compute the euclidean distance between the generated matrices. By doing this we are trying to identify the highways connecting two mostly disconnected sets of start/end Wikipedia articles. The more disconnected the two sets are the more likely it is that highway is an "International Highway"
 
 ### Average
 
