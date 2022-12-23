@@ -1,5 +1,8 @@
 # Is "pyramid" related to "bean"? What are the craziest connections people make in the Wikispeedia game?
 
+# Data story
+Please visit our website [here](https://epfl-ada.github.io/ada-2022-project-hltw/)
+
 # Abstract
 
 Wikispeedia is an online game where players have to reach the target wiki article from an unrelated start wiki article by clicking links in the articles. In all finished paths, some paths are reached logically by following Wikipedia articles that are semantically similar or steer toward familiar topics. However, the Wikispeedia game wouldn’t be a game if there weren’t any unique and genuine ways of reaching the desired end goal. These ingenious ways in which very few people connect are what draw us to explore this data set. 
@@ -89,16 +92,14 @@ Based on the commonly used edges of different lengths, we accumulate the count o
 * Teammate 3: Henry
 * Teammate 4: Lili
 
-## Task split
+## Contribution
 
-* Explore data: Teammate 3
+* Explore data: Teammate 3,4
 * Arrange proposal: Teammate 1,2,3,4
-* Research question 1: Teammate 1,2
-* Research question 2: Teammate 2,3
-* Research question 3: Teammate 3,4
-* Arrange data story: Teammate 4
-* Website development: Teammate 1, 2, 3
+* Explore Wiki2Vec: Teammate 1
+* Explore research question 1: Teammate 1
+* Explore research question 2: Teammate 4
+* Explore research question 3: Teammate 2
+* Arrange data story: Teammate 1,2,3,4
+* Website development: Teammate 1,3
 
-# Questions for TAs (optional): Add here any questions you have for us related to the proposed project.
-
-N/A
