@@ -87,19 +87,19 @@ Based on the commonly used edges of different lengths, we accumulate the count o
 
 ## Members
 
-* Teammate 1: Liudvikas 
-* Teammate 2: Chenyu
-* Teammate 3: Henry
-* Teammate 4: Lili
+* Teammate 1: Liudvikas Lazauskas 
+* Teammate 2: Chenyu Han
+* Teammate 3: Chun-Hung Tseng
+* Teammate 4: Lili Wang
 
 ## Contribution
 
-* Explore data: Teammate 3,4
-* Arrange proposal: Teammate 1,2,3,4
-* Explore Wiki2Vec: Teammate 1
-* Explore research question 1: Teammate 1
+* Explore data: Teammate 1, 2, 3, 4
+* Arrange proposal: Teammate 1, 2, 3, 4
+* Explore Wiki2Vec: Teammate 1, 2
+* Explore research question 1: Teammate 1, 3
 * Explore research question 2: Teammate 4
-* Explore research question 3: Teammate 2
-* Arrange data story: Teammate 1,2,3,4
-* Website development: Teammate 1,3
+* Explore research question 3: Teammate 2, 3
+* Arrange data story: Teammate 1, 2, 3, 4
+* Website development: Teammate 1, 3
 
