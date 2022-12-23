@@ -116,7 +116,7 @@ For example: "Asteroid" to "Viking" is connected the same way as is "Sun" to "Ir
 
 Playing around with similarity threshold in the tables above, will give you a good sense of spurious correlations that can occur in the game play without the players even knowing.
 
-# Unique paths of Wikispeedia
+# Unique paths taken by the players of Wikispeedia
 
 So far, we have only been discovering the highways, which are the common knowledge shared by people. But if we look at the data in a different way - instead of trying to see the commonly used highways, what are the ways that one can do to go from one city to another?
 
