@@ -160,6 +160,8 @@ Let's focus on the paths with the least portion of distance-decreasing edges, i.
 
 ## Analyzing the detoured paths
 
+For inspecting the paths with the most detours, we sort all the paths with the portion of distance-decreasing edges, and select the 50 paths with least portion of distance-decreasing edges. After that, we manually inspect these paths and check if there are some similarities. Note that there are some very lucky paths of which the starting point and the destination are exactly the same, and thus leads to no distance-decreasing edges, of course we filter out them in this part.
+
 Here are some examples of the detoured paths.
 
 {% include detoured_paths.html %}
@@ -187,7 +189,7 @@ These paths quickly reach the pages that are semantically close to the destinati
 
 In fact, the boundaries of the three types are not absolute, a detoured path can be both a sequential retrieval path and also lingering path.
 
-### Comparison among detoured paths, shortest paths, and other's path
+### Comparison among detoured paths, shortest paths, and other's paths
 
 We then compare them with the shortest paths and other players' paths. 
 
