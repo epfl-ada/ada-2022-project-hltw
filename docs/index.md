@@ -59,9 +59,6 @@ With the filtered highways we determine “entry points”(start) - articles tha
 
 We have a heavy tail distribution of value counts for times each path of different length is taken.
 
-### Data on Highways
-
-**TBD**
 
 # Common knowledge inferring processes and their connections
 
