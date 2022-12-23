@@ -14,7 +14,7 @@ layout: home
 
 Wikipedia is viewed as storage for an incredible amount of information. However, in reality, it is also a largely connected graph of articles with semantic and contextual similarities. 
 
-An analogy in real life would be Cities and Towns representing articles and blue links in Wikipedia are the roads that connect the cities. There might be cities that are interconnected with highways so that more people can get around the cities in a more direct and faster fashion.  
+An analogy in real life would be Cities and Towns representing articles and blue links (hyperlinks within the articles) in Wikipedia are the roads that connect the cities. There might be cities that are interconnected with highways so that more people can get around the cities in a more direct and faster fashion.  
 
 With Wikipedia alone, we cannot view the traffic on these roads, since we have no knowledge of how people hop from one idea to another. That’s where the Wikispeedia dataset comes in.
 
