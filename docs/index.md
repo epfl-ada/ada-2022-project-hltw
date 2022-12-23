@@ -91,7 +91,7 @@ We tried 3 different approaches to find the international and local highways. We
 
 For computing the average vector we take all the vectors we have in entry and end sets and compute the mean vectors which are later used to compute cosine similarity.
 
-{% include averaged_dist.html %}
+{% include average_dist.html %}
 
 {% include averaged.html %}
 
