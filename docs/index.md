@@ -125,9 +125,21 @@ Now we need to choose a threshold to separate local(similar) highways between co
 
 So far, we have only been discovering the highways, which are the common knowledge shared by people. But if we look at the data in a different way - instead of trying to see the commonly used highways, what are the ways that one can do to go from one city to another?
 
+## Our motivation
+
+<img align = "center" src="output/value_of_optimal_move.png" width="60%" height="60%"> 
+
+In the graph above, we can see the decrease in distance of each move. The x-axis means the distance change of a move, and the y-axis is the percentage of the move which decreases the distance by x over all moves.
+
+We can see that about 68% of the edges in all the paths decrease the distance by 1, and about 28% of the edges do not change the distance. This means in general the when people are moving from idea to idea, they tend to pick the fastest way. 
+
+<img align = "center" src="output/ratio_of_optimal_move.png" width="60%" height="60%"> 
+
+In the diagram above we focus on the edges that decrease the distance. The x-axis means the ratio of such edges in the whole path, and the y-axis is the number of paths.
+
+We can see that the majority of paths contains more than 50% edges that decrease the distance, and a large portion of the paths contains only distance-decreasing edges. As we can already see some interesting things from here - there are some players that take a detour! We'll then focus on these players, and find out how do they think differently from the majority.
+
 It's like in real life, taking the highway might be the fastest option, but we might sometimes want to make a detour and sightsee a bit. So in the next section, we will present our findings on how differently people think, to get from one idea to another.
-
-
 
 ## How we apprach it 
 
@@ -141,6 +153,16 @@ With such information, we can characterize each path with a vector of distance c
 
 With each path characterized with a vector, we can apply data analyzing methods like clustering on the vector space, and get different groups of paths.
 
+**TBD**
+
 ## 3 Categories
 
-# Conclusion
+We discovered that there are mainly 4 types of people in the game, the one that tries to play optimially, **TBD**. 
+
+# In a nutshell
+
+Common knowledge are shared, but people think differently to infer on things.
+
+We can see from the first part of the data story that highways, which are the common knowledge, bridges a lot of the ideas together. But we can also see that not everyone thinks the same way, as in the second part we discovered that for the same starting and ending ideas, people can have drastically different approach to inferring between them.
+
+United in diversity.
