@@ -8,7 +8,7 @@
 layout: home
 ---
 
-> Common knowledge are shared, but people think differently to infer on things.
+> Common knowledge is shared, but people think differently to infer things.
 
 # Introduction
 
@@ -93,6 +93,8 @@ For computing the average vector we take all the vectors we have in entry and en
 
 {% include average_dist.html %}
 
+We can see that the frequencies of similarities fall into normal distribution. Therefore, we can try to find a cut off at the left side of the distribution. As previously discussed we would try to cut off at around 0.2-0.4 threshold.
+
 {% include averaged.html %}
 
 With threshold 0.2 we see that the table shows really disconnected sets of articles at the start and the end. However, we face one problem, that the article sets are mostly composed of very few articles. The reason for this is most likely that the more articles you have, the more similar they become to each other when they are averaged out. Therefore, we tried the two other following approaches.
@@ -103,6 +105,8 @@ For computing the average vector we take all the vectors we have in entry and en
 
 {% include weighted_dist.html %}
 
+The weighted average frequency distribution also falls into normal distribution. Therefore, we can follow the same thresholding principle as for the average case.
+
 {% include weighed.html %}
 
 With threshold 0.2 we see that the table shows really disconnected sets of articles at the start and the end. However, we face one problem, that the article sets are mostly composed of very few articles. The reason for this is most likely that the more articles you have, the more similar they become to each other when they are averaged out. Therefore, we tried the two other following approaches.
@@ -112,8 +116,11 @@ With threshold 0.2 we see that the table shows really disconnected sets of artic
 Another way of viewing the similarity between entry and exit sets was to create a matrix for each of them and compute the euclidean distance between them. We concatenate vectors accordingly into start and end matrices and then compute the Euclidean distance between the two. Finally, the distance is normalized for viewing the results.
 
 {% include euc_dist.html %}
+The euclidean distance approach has a skewed distribution and makes all the articles pretty similar. In this case the cutoff is at around 0.6-0.7.
 
 {% include euclidean.html %}
+
+The euclidean distance approach allows us to see highly connected sets of start and end articles. Both of the sets consist of large variety of very different topics.
 
 ### Similarities between start and end points / Conclusion?
 
