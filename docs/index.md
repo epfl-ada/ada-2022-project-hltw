@@ -42,10 +42,9 @@ We began our analysis by looking into the highways! To do so, we define highways
 
 ### Path counts for subpaths
 
-We use the common subpath with length 2-6 and 7-10 as the representative.
+We use the common subpath with length 2-6 and 7-10 as the representative. We use the length up to 6 as the cutoff because the longer the length, the less usage it has, thus, it doesn't give us meanful statistics.
 
-In the graph above we compare value counts of paths of length 2-6 and 7-10. We can see that 2-6 almost constantly holds a higher value count ratio than 7-10. 2-6 Has almost 80 times more data compared to 7-10.
-An overview of the number of entries for the common subpaths with each length:
+The following graph shows an overview of the number of entries for the common subpaths with each length.
 
 {% include value_counts.html %}
 
@@ -67,7 +66,7 @@ We have a heavy tail distribution of value counts for times each path of differe
 
 # Common knowledge inferring processes and their connections
 
-Our next analysis will try to determine if the players of the game think differently or similarly to the real world.
+We try to see how these article cities are connected. We have a large variety of starting and ending articles which are connected through the same highway. The main idea is to identify the most diverse sets of articles at the start and the end to see what are the most unique highways on Wikispeedia game.
 
 ## Using Wikipedia2Vec
 
