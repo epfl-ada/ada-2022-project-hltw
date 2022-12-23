@@ -22,17 +22,16 @@ Wikispeedia is an online game where players have to reach the target wiki articl
 
 Let’s view people's connections in the Wikispeedia game as trips between cities and towns, and start the discovery journey!
 
-## How are the knowledge cities connected together?
+# How are the knowledge cities connected together?
 
 There are some cities that have a lot of roads connected to them, this is the idea of the hub on the graph. Hubs are great for identifying a commonly known idea, but it doesn't show how ideas are connected and used together. So instead, we decided to look at how we get from one idea to the other, which will give us a better picture of how people think.
 
 We come up with the idea of using common sub-paths of length greater than 1, which represents how logical ideas are linked together. We observed that we have many recurring common paths in the Wikispeedia games, which we call highways - as they are the most commonly used paths between many articles and are largely reused in games. We would like to compare it against real-world Wikipedia data.
 
-# Data
 
 ## Explain the Wikispeedia dataset
 
-**TBD**
+We mainly focused on `paths_finished.tsv` from the Wikispeedia dataset. It contains `hashedIpAddress`, `timestamp`, `durationInSec`, `path` and `rating`, we only use `path` here. The `path` consists of the starting article and every player-clicked article. Some paths have a back sign "<", we decided to remove the sign and the related misselected articles to avoid any misleading. There is also an unfinished path file, we chose not to use it because the number of finished paths (51318) is twice as large as unfinished paths (24875), and finished paths are more valuable for our research. 
 
 ## Highways
 
