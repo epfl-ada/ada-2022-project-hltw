@@ -55,10 +55,7 @@ Highways itself are not as interesting if we cannot categorize them. What we try
 
 ### Determine bag of starting articles for each highway
 
-With the filtered highways we determine “entry points”(start) - articles that are one link away from highway in user’s game path and “exit points”(end) - articles that user ends up on after using the highway.
-
-We have a heavy tail distribution of value counts for times each path of different length is taken.
-
+With the filtered highways we determine “entry points” (start) - articles that are one link away from highway in user’s game path and “exit points” (end) - articles that user ends up on after using the highway.
 
 # Common knowledge inferring processes and their connections
 
