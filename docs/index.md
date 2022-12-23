@@ -95,6 +95,8 @@ The weighted average frequency distribution also falls into the normal distribut
 
 {% include weighed.html %}
 
+> Notice that Firefox might not render our animation correctly. Please use Chrome to view the animation! Thank you.
+
 With threshold 0.2 we see that the table shows really disconnected sets of articles at the start and the end. However, we face one problem, that the article sets are mostly composed of very few articles. The reason for this is most likely that the more articles you have, the more similar they become to each other when they are averaged out. Therefore, we tried the two other following approaches.
 
 ### Euclidean Distance
@@ -199,10 +201,10 @@ But sometimes maybe they are just luckier than the detoured paths. In the follow
 
 # In a nutshell
 
-Common knowledge is shared, but people think differently to infer things.
+Overall, the game allows us to view the Wikipedia hyperlink paths as travel paths humans take while playing the Wikispeedia game. While they are traversing these paths they leave undeniable traces of their associations and connections with these articles, which in turn allow us to make correlations between these connections. 
 
-We can see from the first part of the data story that highways, which are common knowledge, bridge a lot of ideas together. But we can also see that not everyone thinks the same way, as in the second part we discovered that for the same starting and ending ideas, people can have a drastically different approaches to inferring between them.
+Wikipedia highways allow us to connect the bags of topics that are connected by the same underlying highway, which causes us to see correlations between totally unconnected things. Overall, this allows us to find the spurious connections people make unconsciously while playing the game.
 
-United in diversity.
+On the other hand, our approach with highways is not fully true, because, underneath the hood, Wikispeedia is a game, which is supposed to be fun. When analyzing the unique players of the Wikispeedia dataset we are able to see that some players have a brand new vision for the game, rather than simply rushing through the shortest path using the highways, they simply take time to enjoy and browse the Wikipedia articles on their way to the destination. All in all, making their experience in the game enjoyable ride for knowledge.
 
-
+In conclusion, our research allows us to make connections to find connections between unrelated topics using highways, as well as identify the types of article cities and countries that are connected by these highways. We also show that not all data in the dataset can be fully trusted as it is a game and the game will always have new pioneers with unique gameplay.
