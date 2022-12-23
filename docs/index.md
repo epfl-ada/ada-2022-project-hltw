@@ -117,13 +117,13 @@ The euclidean distance approach has a skewed distribution and makes all the arti
 
 The euclidean distance approach allows us to see highly connected sets of start and end articles. Both of the sets consist of a large variety of very different topics.
 
-### Similarities between start and end points / Conclusion?
+### Conclusion
 
-We now have frequencies of similarity values between the start and end points of highways. 
+The three approaches allowed us to get identify the most disconnected sets of entry and exit articles. Which lets us determine some "correlations" players make on the game play path. For example:
 
-Now we need to choose a threshold to separate local(similar) highways from country highways.
+"Asteroid" to "Viking" is connected the same way as is "Sun" to "Ireland". However that does not mean that the two are related in any sense in Wikipedia, just that the players playing the game interpret the two start and end destinations the same way. 
 
-### Interesting findings
+Playing around with similarity threshold in the tables above, will give you a good sense of spurious correlations that can occur in the game play without the players even knowing.
 
 # Unique paths of Wikispeedia
 
