@@ -8,68 +8,97 @@
 layout: home
 ---
 
+> Common knowledge are shared, but people think differently to infer on things.
+
 # Introduction
 
-Wikipedia is viewed as a storage for an incredible amount of information. However in reality it is also a largely connected graph of articles with semantic and contextual similarities. An analogy in real life would be Cities/Towns represent articles and blue links in wikipedia are the roads that connect the cities. However, with wikipedia alone we cannot view the traffic of these old roads, that’s where the Wikispeedia dataset comes in. Wikispeedia is an online game where players have to reach the target wiki article from an unrelated start wiki article by clicking links in the articles, where the human clicked links can be considered as the traffic between cities. 
+Wikipedia is viewed as a storage for an incredible amount of information. However, in reality, it is also a largely connected graph of articles with semantic and contextual similarities. 
 
-Let’s view the connections people make in the Wikispeedia game as trips between towns, and start the discovery journey!
+An analogy in real life would be Cities and Towns representing articles and blue links in wikipedia are the roads that connect the cities. There might be cities that are interconnected with highway, so more people can get around the cities in a more direct and faster fashion.  
 
-# How are the knowledge cities connected together?
+With wikipedia alone we cannot have a view the traffic of these roads, since we have no knowledge of how people hop from one idea to another. That’s where the Wikispeedia dataset comes in.
 
-Instead of using the idea of the hub, we use the idea of common sub-paths of length greater than 1, which represents how logical ideas are linked together. We observed that we have many recurring common paths in the Wikispeedia games, which we call highways - as they are the most commonly used paths between many articles and are largely reused in games. We would like to compare it against real-world wiki data.
+Wikispeedia is an online game where players have to reach the target wiki article from an unrelated start wiki article by clicking links in the articles, where the human clicked links can be considered as the traffic between cities. The path taken is recorded during the gameplay, which is the main subject of our analysis! 
+
+Let’s view the connections people make in the Wikispeedia game as trips between cities and towns, and start the discovery journey!
+
+## How are the knowledge cities connected together?
+
+There are some cities that has a lot of roads connected to them, this is the idea of hub on the graph. Hubs are great for identifying the commonly known idea, but it doesn't show how ideas are connected and used together. So instead, we decided to look at how we get from one idea to the other, which will give us a better picture of how people think.
+
+We come up with the idea of using common sub-paths of length greater than 1, which represents how logical ideas are linked together. We observed that we have many recurring common paths in the Wikispeedia games, which we call highways - as they are the most commonly used paths between many articles and are largely reused in games. We would like to compare it against real-world wikipedia data.
 
 # Data
-## Explain wikispeedia dataset
+
+## Explain Wikispeedia dataset
 
 ## Highways
+
 As with any road trip, sometimes taking a highway is the fastest way to get to the destination. The common subpaths in Wikispeedia games are those highways which connect multiple clusters of cities and allow game players to travel fast.
 
-In our dataset we define highways as roads reused at least 6 times, by user. As seen in the heavy tail distribution, we have thousands of “roads” used 2-5 times however, with roads used more than 6 times the variety of these “roads” is in the hundreds and makes them significantly more rare.
+We began our analysis by looking into the highways! To do so, we define highways in our dataset as roads reused at least 6 times from all the recorded data. As seen in the heavy tail distribution, we have thousands of “roads” used 2-5 times however, with roads used more than 6 times the variety of these “roads” is in the hundreds and makes them significantly more rare.
 
-## Path counts for subpaths
+**insert heavy tail distribution image here**
+
+### Path counts for subpaths
 
 We use the common subpath with length 2-6 and 7-10 as the representative.
-[insert plot In[42]]
+
+**insert plot In 42**
+
 In the graph above we compare value counts of paths of length 2-6 and 7-10. We can see that 2-6 almost constantly holds a higher value count ratio than 7-10. 2-6 Has almost 80 times more data compared to 7-10.
 An overview of the number of entries for the common subpaths with each length:
-[insert plot In[44]]
+
+**insert plot In 44**
+
 We can see rapid decrease from 4-5 path reusage. Technically it should make sense to to subpaths of length 2-5 but we include 6 just to draw more interesting results, as subpaths of 6 may connect more peculiar areas.
 
 ## Categorizing “highways”
 
 Highways itself are not as interesting if we cannot categorize them. What we try to do later is to determine types of highways. The general idea is that we have 2 types of highways: local and international. Local highways connect similar articles but still allow users to travel fast through blue links. On the other hand, international highways are the highways that connect very different sets of articles and allow users to make large “contextual/semantic” jumps between start and end sets.
 
-## Determine bag of starting articles for each highway
+### Determine bag of starting articles for each highway
 
 With the filtered highways we determine “entry points”(start) - articles that are one link away from highway in user’s game path and “exit points”(end) - articles that user ends up on after using the highway.
-[insert plot Out[47]]
+
+**insert plot Out 47**
+
 We have a heavy tail distribution of value counts for times each path of different length is taken.
 
-## Data of Highways
+### Data of Highways
 
+**TBD**
 
 # Common knowledge inferring process and their connections
-Some info here about what we seek to achieve
+
+Our next analysis will try to determine if the players of the game think differently or similarity to the real world.
 
 ## Using Wikipedia2Vec
 
-Wikipedia2Vec is a tool that converts Wikipedia articles into vector representations. We downloaded the 100 feature pretrained model provided by Wikipedia2Vec and used it in our research.
+Wikipedia2Vec is a tool that converts Wikipedia articles into vector representations. We downloaded the 100-feature pretrained model provided by Wikipedia2Vec and used it in our research.
+
+Our idea is that we will use Wikipedia2Vec as a indication on how things can be inferred from one to another, thus, giving us information on how the real-world knowledge can be inferred from one idea to another.
 
 ## Classiying Highways
 
 As mentioned previously, classifying highways into local and international is one of our objectives. However, there is no clear answer to this, therefore, we classify the highways whose start and end article sets have small cosine similarity as “International Highways” and otherwise “Local Highways”. From the distribution of similarities, which is similar to Normal distribution, the cutoff threshold for “International Highways” lies somewhere between 0.2-0.4 for average and weighted average experiments.
 
 ## Similarities
+
 We tried 3 different approaches to find the international and local highways. We calculate mean, weighted mean of entry and exit point article sets and then compute cosine similarity. Or as our third approach we produce a matrix from the start and end point article vectors and compute euclidean distance between the generated matrices.
 
 ### Average
+
 For computing the average vector we take all the vectors we have in entry and end sets and compute the mean vectors which are later used to compute cosine similarity.
+
 {% include averaged.html %}
 
 With threshold 0.2 we see that the table shows really disconnected sets of articles at the start and the end. However, we face one problem, that the article sets are mostly composed of very few articles. The reason for this is most likely that the more articles you have, the more similar they become to each other when they are averaged out. Therefore, we tried the two other following approaches.
+
 ### Weighted Average
 
 For computing the average vector we take all the vectors we have in entry and end sets and compute the mean vectors which are later used to compute cosine similarity.
+
 {% include weighed.html %}
 
 With threshold 0.2 we see that the table shows really disconnected sets of articles at the start and the end. However, we face one problem, that the article sets are mostly composed of very few articles. The reason for this is most likely that the more articles you have, the more similar they become to each other when they are averaged out. Therefore, we tried the two other following approaches.
@@ -81,19 +110,37 @@ Another way of viewing the similarity between entry and exit sets was to create 
 {% include euclidean.html %}
 
 ### Similarities between start and end points / Conclusion?
-[insert plot In[60]]
+
+**insert plot In 60**
+
 We now have frequencies of similarity values between start and end points of highways. 
 
-
 Now we need to choose a threshold to separate local(similar) highways between country highways.
-[insert plot In[68]]
+
+**insert plot In 68**
 
 ### Interesting findings
 
-## Context category changes RQ3?Opt?
-
 # Unique paths of Wikispeedia
 
-Going on a roadtrip with friends is fun, but everyone has that one friend who always interprets things differently, takes the wrong turn, or plays songs everyone hates. What we are trying to see here is if when that friend is in the driving seat, can he actually reach the destination with his way of thinking. We would try to see how their unique trips complete the journey. Or simply take a scenic ride through wikipedia articles that no one else took.
+So far, we have only been discovering the highways, which are the common knowledge shared by people. But if we look at the data in a different way - instead of trying to see the commonly used highways, what are the ways that one can do to go from one city to another?
 
-....
+It's like in real life, taking the highway might be the fastest option, but we might sometimes want to make a detour and sightsee a bit. So in the next section, we will present our findings on how differently people think, to get from one idea to another.
+
+
+
+## How we apprach it 
+
+In general, the basis of the classification is the change in distance to the destination of each step. Specifically, when moving from one page to another through the link, the player may get closer to the destination if he or she chooses the correct link, which will decrease the distance to the destination by 1. On the contrary, the player may also get further to the destination. We then count in the whole path, how many edges have made the distance decreases, how many edges have not change the distance, and how many edges have increase the distance by 1, 2 or more. We can then get a table like this:
+
+| Distance Change | inf (move to pages that can't reach the destination) | -1 | 0 | 1 | 2 | 3 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| count | 0 | 4 | 2 | 2 | 0 | 0 |
+
+With such information, we can characterize each path with a vector of distance change count. For example, the path of the above table can be characterize with the vector [0, 4, 2, 2, 0, 0]. If we normalize the vector, we can get [0, 0.5, 0.25, 0.25, 0, 0].
+
+With each path characterized with a vector, we can apply data analyzing methods like clustering on the vector space, and get different groups of paths.
+
+## 3 Categories
+
+# Conclusion
