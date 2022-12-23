@@ -29,7 +29,7 @@ There are some cities that have a lot of roads connected to them, this is the id
 We come up with the idea of using common sub-paths of length greater than 1, which represents how logical ideas are linked together. We observed that we have many recurring common paths in the Wikispeedia games, which we call highways - as they are the most commonly used paths between many articles and are largely reused in games. We would like to compare it against real-world Wikipedia data.
 
 
-## Explain the Wikispeedia dataset
+## Using Wikispeedia dataset
 
 We mainly focused on `paths_finished.tsv` from the Wikispeedia dataset. It contains `hashedIpAddress`, `timestamp`, `durationInSec`, `path` and `rating`, we only use `path` here. The `path` consists of the starting article and every player-clicked article. Some paths have a back sign "<", we decided to remove the sign and the related misselected articles to avoid any misleading. There is also an unfinished path file, we chose not to use it because the number of finished paths (51318) is twice as large as unfinished paths (24875), and finished paths are more valuable for our research. 
 
@@ -47,7 +47,7 @@ The following graph shows an overview of the number of entries for the common su
 
 {% include value_counts.html %}
 
-We can see rapid decrease from 4-5 path reusage. Technically it should make sense to to subpaths of length 2-5 but we include 6 just to draw more interesting results, as subpaths of 6 may connect more peculiar areas.
+We can see rapid decrease from 4-5 path reusage. Technically it should make sense to the subpaths of length 2-5 but we include 6 just to draw more interesting results, as subpaths of 6 may connect more peculiar areas.
 
 ## Categorizing “highways”
 
@@ -73,7 +73,7 @@ Wikipedia2Vec is a tool that converts Wikipedia articles into vector representat
 
 Our idea is that we will use Wikipedia2Vec as an indication of how things can be inferred from one to another, thus, giving us information on how real-world knowledge can be inferred from one idea to another.
 
-## Classiying Highways
+## Classifying Highways
 
 As mentioned previously, classifying highways into local and international is one of our objectives. However, there is no clear answer to this, therefore, we classify the highways whose start and end article sets have small cosine similarity as “International Highways” and otherwise “Local Highways”. From the distribution of similarities, which is similar to Normal distribution, the cutoff threshold for “International Highways” lies somewhere between 0.2-0.4 for average and weighted average experiments.
 
