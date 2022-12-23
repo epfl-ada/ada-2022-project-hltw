@@ -91,6 +91,8 @@ We tried 3 different approaches to find the international and local highways. We
 
 For computing the average vector we take all the vectors we have in entry and end sets and compute the mean vectors which are later used to compute cosine similarity.
 
+{% include averaged_dist.html %}
+
 {% include averaged.html %}
 
 With threshold 0.2 we see that the table shows really disconnected sets of articles at the start and the end. However, we face one problem, that the article sets are mostly composed of very few articles. The reason for this is most likely that the more articles you have, the more similar they become to each other when they are averaged out. Therefore, we tried the two other following approaches.
@@ -99,6 +101,8 @@ With threshold 0.2 we see that the table shows really disconnected sets of artic
 
 For computing the average vector we take all the vectors we have in entry and end sets and compute the mean vectors which are later used to compute cosine similarity.
 
+{% include weighted_dist.html %}
+
 {% include weighed.html %}
 
 With threshold 0.2 we see that the table shows really disconnected sets of articles at the start and the end. However, we face one problem, that the article sets are mostly composed of very few articles. The reason for this is most likely that the more articles you have, the more similar they become to each other when they are averaged out. Therefore, we tried the two other following approaches.
@@ -106,6 +110,8 @@ With threshold 0.2 we see that the table shows really disconnected sets of artic
 ### Euclidean Distance
 
 Another way of viewing the similarity between entry and exit sets was to create a matrix for each of them and compute the euclidean distance between them. We concatenate vectors accordingly into start and end matrices and then compute the Euclidean distance between the two. Finally, the distance is normalized for viewing the results.
+
+{% include euc_dist.html %}
 
 {% include euclidean.html %}
 
