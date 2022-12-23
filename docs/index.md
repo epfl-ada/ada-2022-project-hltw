@@ -171,11 +171,19 @@ In the following sections, we will try to catogrize these detoured paths, and co
 
 Based on our observations, in general, we can categorize the detoured paths into three groups: the **sightseeing** paths, the **sequential retrival** paths, and the **lingering** paths.
 
-1. Sightseeing paths: These paths seem to be deliberately taking detours since they contain many pages that do not relate to both the starting point and the destination. Here are some examples.
+#### Sightseeing paths
+
+These paths seem to be deliberately taking detours since they contain many pages that do not relate to both the starting point and the destination. Here are some examples.
 {% include sightseeing_paths.html %}
-2. Sequential retrieval paths: These paths go through many similar pages sequentially, and finally reach the destination. For example, navigating through chemical elements, the names of kings, or simply different centries. Here are two examples.
+
+#### Sequential retrieval paths
+
+These paths go through many similar pages sequentially, and finally reach the destination. For example, navigating through chemical elements, the names of kings, or simply different centries. Here are two examples.
 {% include sequential_retrieval_paths.html %}
-3. Lingering paths:  These paths quickly reach the pages that are semantically close to the destination, but, unfortunately, they are just semantically related (without a hyperlink). In the following example, we can see that the first path goes to 'football' quickly, but failed to find a way from 'football' to 'sport'. Finally, it takes detours to find the correct way. In the second path, it goes through Asian countries, regions, and cultures, but failed to find a way to the page 'Asia' itself.
+
+#### Lingering paths
+
+These paths quickly reach the pages that are semantically close to the destination, but, unfortunately, they are just semantically related (without a hyperlink). In the following example, we can see that the first path goes to 'football' quickly, but failed to find a way from 'football' to 'sport'. Finally, it takes detours to find the correct way. In the second path, it goes through Asian countries, regions, and cultures, but failed to find a way to the page 'Asia' itself.
 {% include lingering_paths.html %}
 
 In fact, the boundaries of the three types are not absolute, a detoured path can be both a sequential retrieval path and also lingering path.
@@ -186,27 +194,15 @@ We then compare them with the shortest paths and other players' paths.
 
 Since the shortest path is computed by an algorithm, it doesn't consider any semantic information. In some cases, it's hard to come up with such paths for humans. Here are some examples.
 
-
-|       | shortest_path                                               |
-|------:|:------------------------------------------------------------|
-| 44675 | ['Palmyra_Atoll', 'Pacific_Ocean', '16th_century', 'Watch'] |
-| 33025 | ['Tokelau', 'United_Kingdom', 'Hydrogen', 'H_II_region']    |
-| 15811 | ['Velociraptor', 'China', 'Volcano']                        |
+{% include shortest_path_demo.html %}
 
 The human player's shortest path sometimes makes wiser choices, so that they succeed in the game. For example, instead of navigating sequentially, they go to hub pages or take highways. Here are some examples.
 
-
-|       | path_list_without_backtracking                                                                                                                                                                                                                                                                                                                        | other_player_shortest                                                   |
-|------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------|
-| 29000 | ['Ruthenium', 'Molybdenum', 'Carbon', 'Mineral', 'Chemical_element', 'Chemistry', 'Steel', 'Manganese', 'Chromium', 'Vanadium', 'Titanium', 'Scandium', 'Calcium', 'Potassium', 'Argon', 'Chlorine', 'Sulfur', 'Phosphorus', 'Silicon', 'Aluminium', 'Magnesium', 'Sodium', 'Neon', 'Fluorine', 'Oxygen', 'Nitrogen', 'Carbon', 'Boron', 'Beryllium'] | ['Ruthenium', 'Periodic_table', 'Beryllium']                            |
-| 39607 | ['Great_Wall_of_China', '17th_century', '16th_century', '15th_century', '14th_century', '13th_century', '12th_century', '11th_century', '10th_century', '9th_century', 'Rome']                                                                                                                                                                        | ['Great_Wall_of_China', 'World_Heritage_Site', 'Italy', 'Rome']         |
-| 31668 | ['Hawk', 'North_America', 'United_States', 'Steel', 'Iron', 'Ruthenium', 'Osmium', 'Rhenium', 'Tungsten', 'Tantalum', 'Hafnium', 'Lutetium', 'Ytterbium', 'Thulium', 'Erbium', 'Holmium', 'Dysprosium', 'Terbium', 'Gadolinium', 'Europium', 'Samarium', 'Promethium', 'Neodymium', 'Praseodymium', 'Cerium']                                         | ['Hawk', 'Canada', 'Petroleum', 'Hydrogen', 'Periodic_table', 'Cerium'] |
+{% include shortest_path_wiser.html %}
 
 But sometimes maybe they are just luckier than the detoured paths. In the following example, we highly suspect that the players have taken similar strategies.
 
-|       | path_list_without_backtracking                                                                                                                                                                                                        | other_player_shortest                      |
-|------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------|
-| 50803 | ['Zulu', 'South_Africa', 'Diamond', 'Platinum', 'Nickel', 'Cobalt', 'Iron', 'Manganese', 'Chromium', 'Vanadium', 'Titanium', 'Scandium', 'Calcium', 'Potassium', 'Argon', 'Chlorine', 'Sulfur', 'Phosphorus', 'Silicon', 'Aluminium'] | ['Zulu', 'AK-47', 'Chromium', 'Aluminium'] |
+{% include shortest_path_lucky.html %}
 
 # In a nutshell
 
