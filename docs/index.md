@@ -157,7 +157,7 @@ Let's focus on the paths with the least portion of distance-decreasing edges, i.
 
 ## Analyzing the detoured paths
 
-For inspecting the paths with the most detours, we sort all the paths with the portion of distance-decreasing edges, and select the 50 paths with least portion of distance-decreasing edges. After that, we manually inspect these paths and check if there are some similarities. Note that there are some very lucky paths of which the starting point and the destination are exactly the same, and thus leads to no distance-decreasing edges, of course we filter out them in this part.
+For inspecting the paths with the most detours, we sort all the paths with the portion of distance-decreasing edges and select the 50 paths with the least portion of distance-decreasing edges. After that, we manually inspect these paths and check if there are some similarities. Note that there are some very lucky paths in which the starting point and the destination are exactly the same, and thus leads to no distance-decreasing edges, of course, we filter out them in this part.
 
 Here are some examples of the detoured paths.
 
