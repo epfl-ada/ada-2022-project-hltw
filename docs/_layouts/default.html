@@ -2,17 +2,6 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
 <head>
-    
-    {% if site.google_analytics %}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '{{ site.google_analytics }}');
-    </script>
-    {% endif %}
-    
     <!-- Non social metatags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,21 +16,10 @@
     {% endif %}
     
     <title>{{ page-title }}</title>
-    
-    {% if site.gems contains "jekyll-seo-tag" %}
-    <!-- jekyll-seo-tag -->
-    {% else %}
-    {% include social-metatags.html %}
-    {% endif %}
+    {% assign page-tagline = site.description | default: site.github.project_tagline | escape %}
     
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-    
-    {% if site.gems contains "jekyll-feed" %}
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | absolute_url }}">
-    {% endif %}
-    
-    <link rel="shortcut icon" href="{{ "/favicon.ico" | absolute_url }}">
-    
+        
     <meta name="robots" content="noarchive">
     
     <!-- <link rel="alternate" media="only screen and (max-width: 640px)" href="">
@@ -51,19 +29,6 @@
         <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | absolute_url }}">
     </head>
     <body>
-        
-        {% include site-header.html %}
-        
-        {% if page.layout == 'home' %}
-        {% assign page-tagline = site.description | default: site.github.project_tagline | escape %}
-        {% endif %}
-        {% if page.layout == 'page' %}
-        {% assign page-tagline = page.tagline | escape %}
-        {% endif %}
-        {% if page.layout == 'post' %}
-        {% assign page-tagline = page.tagline | escape  %}
-        {% endif %}
-        
         <section class="page-header">
             <h1 class="project-name">{{ page-title }}</h1>
             <h2 class="project-tagline">{{ page-tagline }}</h2>
