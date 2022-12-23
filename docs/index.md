@@ -41,13 +41,11 @@ We began our analysis by looking into the highways! To do so, we define highways
 
 ### Path counts for subpaths
 
-We use the common subpath with length 2-6 and 7-10 as the representative. We use the length up to 6 as the cutoff because the longer the length, the less usage it has, thus, it doesn't give us meanful statistics.
-
-The following graph shows an overview of the number of entries for the common subpaths with each length.
+Once we have the list of all possible subpaths, we need to set a threshold, how many times does a path need to be used for it to count as a road/highway. We plotted the path usage counts against number of times such usage occurs.
 
 {% include value_counts.html %}
 
-We can see rapid decrease from 4-5 path reusage. Technically it should make sense to the subpaths of length 2-5 but we include 6 just to draw more interesting results, as subpaths of 6 may connect more peculiar areas.
+From the plot we can see a clear heavy tail distribution among these subpath counts. We decided to make a cutoff at 6. In a sense a path has to be taken at least 6 or more times to be considered a road, otherwise it is just jump sequence over Wikipedia hyperlinks
 
 ## Categorizing “highways”
 
@@ -112,9 +110,9 @@ The euclidean distance approach allows us to see highly connected sets of start 
 
 ### Conclusion
 
-The three approaches allowed us to get identify the most disconnected sets of entry and exit articles. Which lets us determine some "correlations" players make on the game play path. For example:
+The three approaches allowed us to get identify the most disconnected sets of entry and exit articles. Which lets us determine some "correlations" players make on the game play path. 
 
-"Asteroid" to "Viking" is connected the same way as is "Sun" to "Ireland". However that does not mean that the two are related in any sense in Wikipedia, just that the players playing the game interpret the two start and end destinations the same way. 
+For example: "Asteroid" to "Viking" is connected the same way as is "Sun" to "Ireland". However that does not mean that the two are related in any sense in Wikipedia, just that the players playing the game interpret the two start and end destinations the same way. 
 
 Playing around with similarity threshold in the tables above, will give you a good sense of spurious correlations that can occur in the game play without the players even knowing.
 
